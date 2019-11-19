@@ -1,0 +1,17 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Initialize
+      run: git submodule update --init --recursive
+    - name: Build
+      run: ./scripts/daobet_build.sh
+    - name: Debian package
+      run: chmod +x build/packages/generate_package.sh && ./build/packages/generate_package.sh deb
