@@ -1,5 +1,5 @@
 set(VENDOR "mixbytes")
-set(PROJECT_NAME "daobet")
+set(PROJECT_NAME "daobet-mv-040")
 set(DESC "blockchain software")
 set(URL "https://github.com/DaoCasino/DAObet")
 set(EMAIL "hello@mixbytes.io")

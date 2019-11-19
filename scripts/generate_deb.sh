@@ -2,8 +2,8 @@
 
 PREFIX="usr"
 SPREFIX=${PREFIX}
-SUBPREFIX="opt/${PROJECT}/${VERSION}"
-SSUBPREFIX="opt\/${PROJECT}\/${VERSION}"
+SUBPREFIX="opt/daobet-mv/${VERSION}"
+SSUBPREFIX="opt\/daobet-mv\/${VERSION}"
 RELEASE="${VERSION_SUFFIX}"
 
 # default release to "1" if there is no suffix
@@ -52,6 +52,6 @@ export SSUBPREFIX
 . ./generate_tarball.sh ${NAME}
 echo "Unpacking tarball: ${NAME}.tar.gz..."
 tar -xzvf ${NAME}.tar.gz -C ${PROJECT} || exit 1
-dpkg-deb --build ${PROJECT} || exit 1
+dpkg-deb --build --root-owner-group ${PROJECT} || exit 1
 mv ${PROJECT}.deb ${NAME}.deb || exit 1
 rm -r ${PROJECT} || exit 1
