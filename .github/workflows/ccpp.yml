@@ -12,6 +12,6 @@ jobs:
     - name: Initialize
       run: git submodule update --init --recursive
     - name: Build
-      run: ./scripts/daobet_build.sh
+      run: ./scripts/daobet_build.sh -y
     - name: Debian package
       run: chmod +x build/packages/generate_package.sh && ./build/packages/generate_package.sh deb
